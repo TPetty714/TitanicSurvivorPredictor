@@ -6,7 +6,7 @@ class Perceptron:
         self.weights = []
         for i in range(featureSize):
             self.weights.append(random.uniform(-1,1))
-        print("Perceptron with % weights created at layer %", len(self.weights), layerNum)
+        print("Perceptron with " + str( len( self.weights ) ) + " weights created at layer " + str( layerNum ) )
 
     def getWeights(self):
         return self.weights

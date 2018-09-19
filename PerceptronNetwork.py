@@ -2,13 +2,13 @@ from PerceptronLayer import PerceptronLayer as PLayer
 
 class PerceptronNetwork:
     Layers = []
-    def __init__( self, featureSize, numHidden, weights=[] ):
+    def __init__( self, featureSize, numHidden ):
         self.Layers = []
         self.Layers.append( PLayer( featureSize, 0 ) )
         for i in range( numHidden ):
             self.Layers.append( PLayer( featureSize, i+1 ) )
-        self.Layers.append(PLayer( featureSize, featureSize, True ))
-        print( "Created % layers", numHidden + 1 )
+        self.Layers.append(PLayer( featureSize, numHidden + 1, True ))
+        print( "Created " + str( numHidden + 2 ) + " layers")
 
     def getWeights(self):
         weights = []
