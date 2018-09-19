@@ -15,3 +15,9 @@ class PerceptronLayer:
         for i in range( len( self.perceptrons ) ):
             weights.append( self.perceptrons[i].getWeights() )
         return weights
+
+    def loadWeights(self, weights):
+        for i in range( len( self.perceptrons ) ):
+            if weights[i] != None:
+                print( "Replacing weights on perceptron ", i)
+                self.perceptrons[i].loadWeights(weights[i])

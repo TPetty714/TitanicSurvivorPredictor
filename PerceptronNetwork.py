@@ -15,3 +15,9 @@ class PerceptronNetwork:
         for i in range( len( self.Layers ) ):
             weights.append( self.Layers[i].getWeights() )
         return weights
+
+    def loadWeights(self, weights):
+        for i in range(len(self.Layers)):
+            if weights[i] !=None:
+                print( "Replacing weights on layer ", i )
+                self.Layers[i].loadWeights(weights[i])
