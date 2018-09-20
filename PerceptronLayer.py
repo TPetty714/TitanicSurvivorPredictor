@@ -10,6 +10,12 @@ class PerceptronLayer:
         else:
             self.perceptrons.append( Perceptron( featureSize, layerNum ) )
 
+    def train( self, data ):
+        sums = []
+        for i in range( len( self.perceptrons ) ):
+            sums.append( self.perceptrons[i].train( data ) )
+        return sums
+
     def getWeights(self):
         weights = []
         for i in range( len( self.perceptrons ) ):
@@ -21,3 +27,5 @@ class PerceptronLayer:
             if weights[i] != None:
                 print( "Replacing weights on perceptron ", i)
                 self.perceptrons[i].loadWeights(weights[i])
+
+    # def calculateErrors( self, outputs, actuals ):
